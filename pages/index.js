@@ -1,18 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import { getCatsData } from '../src/api/cats';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Head from 'next/head';
+import Image from 'next/image';
+import { CatsList } from '../src/components/cats/cats'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from '../styles/Home.module.css'
-import { List } from '../src/components/list/list';
-import { Spinner } from 'react-bootstrap';
-import { useGetCats } from '../src/components/list/use-list';
 
 export default function Home() {
-
-  const { loading, data } = useGetCats();
-
   return (
     <div className={styles.container}>
       <Head>
@@ -31,10 +24,8 @@ export default function Home() {
           <code className={styles.code}>pages/index.js</code>
         </p>
 
-        <div className='p-4 row d-flex align-item-center justify-content-between'>
-          { loading && <Spinner animation="grow" variant="primary" />}
-          { !loading && <List data={data} /> }
-        </div>
+        <CatsList />
+
       </main>
 
       <footer className={styles.footer}>
