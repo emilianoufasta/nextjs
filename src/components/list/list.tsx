@@ -16,4 +16,4 @@ export const List = ({ data }) => {
       </Card.Body>
     </Card>
   ))
-}
+};
